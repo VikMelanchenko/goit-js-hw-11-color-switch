@@ -15,8 +15,6 @@ const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-let intervalId = null;
-
 startBtn.addEventListener("click", swichStart);
 stopBtn.addEventListener("click", swichStop);
 
@@ -25,11 +23,9 @@ function swichStart() {
   colorSwich = setInterval(() => {
     let color = randomIntegerFromInterval(0, colors.length - 1);
     body.style.background = colors[color];
-    console.log("swich colors");
   }, 1000);
 }
 
 function swichStop() {
   clearInterval(colorSwich);
-  console.log("stop swich colors");
 }
